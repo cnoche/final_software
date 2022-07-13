@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
+<title>Maidenful Selenium Testing</title>
+<link rel="shortcut icon" href="favicon.ico">
+<!-- <link rel="stylesheet" href="style_login.css"> -->
+
+<!-- <script type="text/javascript" src="speedtest.js"></script> -->
+
+</head>
+<body>
+    <form id="form" method="post">     
+        <h1> Say Smething! </h1>
+        <div class= "container">
+            <div class = "Names">
+                <div class="column">
+                    <label class="text_form" for="uname"> Message</label>
+                    <input type="text" placeholder="Enter Message" name="message" value="{{request.form.message }}" required>
+                    <label for="psw">Topic</label>
+                    <input class="text_form" type="text" placeholder="topic" name="topic" value="{{request.form.topic }}" required>
+                    <button type="submit">Send</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

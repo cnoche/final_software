@@ -7,9 +7,6 @@ def create_app():
     
 app = create_app()  
 
-if __name__ == "__main__":
-    app.run(debug=False)
-
 @app.route("/publisher", methods=['POST'])
 def publish():
     message = request.form["message"]
@@ -20,10 +17,13 @@ def publish():
     db.session.add(newMes)
     db.session.commit()
 
-    return render_template("index.html")
+    return render_template("templates/index.html")
 
 @app.route("/subscriber/<topic>", methods=['GET'])
 def subs(topic=None):
-    for result in db.execute("SELECT * FROM Messages WHERE topic="+"'"+topic+"'"):
+    for result in db.engine.execute("SELECT * FROM Messages WHERE topic="+"'"+topic+"'"):
         print(result)
-    return render_template("index.html")
+    return render_template("templates/index.html")
+
+if __name__ == "__main__":
+    app.run(debug=False)
