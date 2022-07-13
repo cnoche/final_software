@@ -18,12 +18,3 @@ class Message(db.Model):
         self.topic = topic
 
 
-
-if __name__ == '__main__':
-    db.create_all()
-
-def create_app():
-    app = Flask(__name__)
-    return app
-    
-app = create_app()  
