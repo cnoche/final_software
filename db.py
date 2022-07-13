@@ -10,11 +10,13 @@ app.secret_key = 'secret string'
 db = SQLAlchemy(app)
 
 class Message(db.Model):
-    message=db.Column(db.String(2000), nullable=False)
-    topic=db.Column(db.String(120), primary_key=True, nullable=False) 
+    message=db.Column(db.String(255), nullable=False)
+    topic=db.Column(db.String(50), primary_key=True, nullable=False) 
     
     def __init__(self, message, topic):
         self.message = message
         self.topic = topic
 
+if __name__ == '__main__':
+    db.create_all()
 
