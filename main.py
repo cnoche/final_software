@@ -13,8 +13,8 @@ def publish():
     print(message, file=sys.stderr)
     topic = db.request.form["topic"]
     print(topic, file=sys.stderr)
-    newMes = db.Message(message, topic)
-    db.session.add(newMes)
+    new_mes = db.Message(message, topic)
+    db.session.add(new_mes)
     db.session.commit()
 
     return db.render_template("templates/index.html")
